@@ -1,0 +1,15 @@
+<div class="w-full h-screen bg-indigo-700">
+	<nav class="w-full p-12 flex justify-end">
+		<ul class="text-white text-lg">
+			@for(route of menuRoutes; track $index){
+			<a [routerLink]="route.path">
+				<li class="inline-block px-4 relative"
+					[ngClass]="{'after:content-[\'\'] after:-bottom-1/2 after:left-1/2 after:-translate-x-1/2 after:absolute after:w-2 after:h-2 after:bg-white after:rounded-full' : isRouteActive(route.path)}">
+					{{ route.data?.['title'] }}
+				</li>
+			</a>
+			}
+		</ul>
+	</nav>
+	<router-outlet></router-outlet>
+</div>
