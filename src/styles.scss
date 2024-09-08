@@ -3,7 +3,8 @@
 @tailwind utilities;
 
 * {
-  @extend .suse-200;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  font-weight: 300;
 }
 
 html,
@@ -14,11 +15,4 @@ body {
 body {
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
-}
-
-.suse-200 {
-  font-family: "SUSE", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 200;
-  font-style: normal;
 }

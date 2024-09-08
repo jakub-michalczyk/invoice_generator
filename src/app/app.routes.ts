@@ -1,6 +1,6 @@
 import { Routes } from '@angular/router';
-import { InvoiceFormComponent } from './components/invoice-form/invoice-form.component';
 import { InvoiceSummaryComponent } from './components/invoice-summary/invoice-summary.component';
+import { InvoiceFormComponent } from './components/invoice-form/invoice-form.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: '/invoice-form', pathMatch: 'full' },
