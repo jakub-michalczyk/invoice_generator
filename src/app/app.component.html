@@ -1,5 +1,7 @@
 <div class="w-full h-screen bg-indigo-700">
-  <nav class="w-full p-12 flex justify-end">
+  <nav
+    class="w-full px-2 md:px-8 pt-8 pb-24 flex justify-center md:justify-end"
+  >
     <ul class="text-white text-lg">
       @for (route of menuRoutes; track $index) {
         <a [routerLink]="route.path">
