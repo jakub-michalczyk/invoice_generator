@@ -1,4 +1,4 @@
-<div class="flex justify-center text-white">
+<div class="flex justify-center text-white pb-4">
   <form [formGroup]="invoiceForm" (ngSubmit)="onSubmit()">
     <div formArrayName="items">
       @for (item of items.controls; track $index) {
