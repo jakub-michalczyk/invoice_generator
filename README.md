@@ -52,6 +52,8 @@ Rename the **environment.example.ts** to **environment.ts** and add your API key
 ng serve
 ```
 
+If the enviroment.ts file is not detected, please restart the build and run it again or restart your text editor.
+
 **5. Open your browser and navigate to:**
 
 ```
