@@ -12,6 +12,7 @@ import {
   ReactiveFormsModule,
   Validators,
 } from '@angular/forms';
+import { Item } from '../invoice-summary/invoice-summary.model';
 
 @Component({
   selector: 'app-invoice-form',
@@ -90,10 +91,13 @@ export class InvoiceFormComponent implements OnInit {
       return;
     }
 
-    // Navigate to the summary page if there is at least one valid item
-    this.router.navigate(['/invoice-summary'], {
-      state: { items: this.invoiceForm.value.items },
-    });
+    // Filter out invalid items
+    const validItems = this.items.controls
+      .filter((item) => item.valid)
+      .map((item) => item.value as Item);
+
+    sessionStorage.setItem('invoiceItems', JSON.stringify(validItems)); // Navigate to the summary page if there is at least one valid item
+    this.router.navigate(['/invoice-summary']);
   }
 
   getNameError(index: number): string {
