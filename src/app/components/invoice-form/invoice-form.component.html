@@ -2,11 +2,7 @@
   <form [formGroup]="invoiceForm" (ngSubmit)="onSubmit()">
     <div formArrayName="items">
       @for (item of items.controls; track $index) {
-        <div
-          class="mb-4"
-          [formGroupName]="$index"
-          class="flex flex-col md:flex-row"
-        >
+        <div [formGroupName]="$index" class="flex flex-col md:flex-row mb-4">
           <mat-form-field class="w-full">
             <mat-label>Name</mat-label>
             <input matInput formControlName="name" placeholder="Item name" />
