@@ -42,27 +42,14 @@ This is an **Angular-based Invoice Generator** application that allows users to 
    npm install
    ```
 
-**3. Set up environment variables:**
-
-Rename the **environment.example.ts** to **environment.ts** and add your API key from the the **JSONBin** service to the environment file.
-
-**4. Start the development server:**
+**3. Start the development server:**
 
 ```
 ng serve
 ```
 
-If the enviroment.ts file is not detected, please restart the build and run it again or restart your text editor.
-
-**5. Open your browser and navigate to:**
+**4. Open your browser and navigate to:**
 
 ```
 http://localhost:4200/
 ```
-
-
-
-## Notes
-
-Ensure you have a valid JSONBin account and replace the API Key in the environment file.
-The environment.ts file is not included in the repository and must be created manually from environment.example.ts
