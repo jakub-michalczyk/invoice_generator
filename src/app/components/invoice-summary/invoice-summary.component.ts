@@ -1,15 +1,14 @@
 import {
   Component,
   DestroyRef,
-  HostListener,
   inject,
   OnDestroy,
   OnInit,
 } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 import { MatButtonModule } from '@angular/material/button';
-import { Company, CompanyResponse, Item } from './invoice-summary.model';
+import { Company, Item } from './invoice-summary.model';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { environment } from '../../../environments/environment';
 
@@ -34,16 +33,12 @@ export class InvoiceSummaryComponent implements OnInit, OnDestroy {
   }
 
   loadCompanyData() {
-    const headers = new HttpHeaders({
-      'X-Master-Key': environment.apiKey,
-    });
-
     // Load company info from the backend
     return this.http
-      .get<CompanyResponse>(environment.apiUrl, { headers })
+      .get<Company>(environment.apiUrl)
       .pipe(takeUntilDestroyed(this.destroyerRef))
       .subscribe(
-        (data) => (this.company = data.record),
+        (data) => (this.company = data),
         (error) => console.error('Error loading company info', error),
       );
   }
